@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  build:
+
     name: Build and Distribute
     runs-on: ubuntu-latest
 
@@ -20,17 +20,11 @@ jobs:
         with:
           channel: stable
 
-      - name: Install Dependencies
-        run: flutter pub get
-
-      - name: Build APK
-        run: flutter build apk --release
-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.6.10'
-          bundler-cache: true
+          #bundler-cache: true
           working-directory: android
 
       - name: Distribute via Firebase

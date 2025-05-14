@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-
+ distribute_to_firebase:
     name: Build and Distribute
     runs-on: ubuntu-latest
 
